@@ -1,6 +1,5 @@
 import { VStack, Heading, HStack, Button, Container } from '@chakra-ui/react'
 import React from 'react'
-import AddBookModal from './addBookModal'
 import BookCard from './bookCard'
 import BookSearchModal from './bookSearchModal'
 export default function BooksDashboard() {
@@ -16,7 +15,7 @@ export default function BooksDashboard() {
         <Heading as="h3" size="md" fontWeight="normal">
           Books Dashboard
         </Heading>
-        
+
         <BookSearchModal />
       </HStack>
 
