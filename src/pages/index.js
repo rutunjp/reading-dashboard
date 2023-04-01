@@ -8,7 +8,7 @@ import {
   HStack,
 } from '@chakra-ui/react'
 import BooksDashboard from '@/components/booksDashboard'
-
+import BottomBubble from '@/components/bottomBubble'
 
 export default function Home() {
   return (
@@ -20,6 +20,8 @@ export default function Home() {
           <BooksDashboard />
         </Container>
       </HStack>
+
+      <BottomBubble />
     </ChakraProvider>
   )
 }
