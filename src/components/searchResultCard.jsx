@@ -11,9 +11,17 @@ import {
 } from '@chakra-ui/react'
 import { useState } from 'react'
 import { AiOutlinePlus } from 'react-icons/ai'
+import { collection, addDoc } from 'firebase/firestore'
+import { db } from '../../firebase-config'
 
 export default function SearchResultCard(props) {
-  console.log('PROPSPS:', props)
+  async function newBook(props) {
+    console.log('DOC PUSHED:', typeof props, props)
+    const docRef = await addDoc(collection(db, 'books'), {
+      ...props,
+      notes: '',
+    })
+  }
   return (
     <ListItem>
       <Card backgroundColor={'gray.100'}>
@@ -30,7 +38,11 @@ export default function SearchResultCard(props) {
                 </Text>
               </VStack>
             </HStack>
-            <Button onClick={( ) => {}}>
+            <Button
+              onClick={async () => {
+                await newBook(props)
+              }}
+            >
               <AiOutlinePlus />
             </Button>
           </HStack>

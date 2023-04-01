@@ -2,6 +2,7 @@ import { VStack, Heading, HStack, Button, Container } from '@chakra-ui/react'
 import React from 'react'
 import BookCard from './bookCard'
 import BookSearchModal from './bookSearchModal'
+import ChakraCarousel from './carousel'
 export default function BooksDashboard() {
   return (
     <VStack align={'start'} pt="6">
@@ -31,19 +32,56 @@ export default function BooksDashboard() {
           Reading Now
         </Heading>
         <HStack>
-          <BookCard
-            bookTitle="Atmoic Habits"
-            bookAuthor="James Wang"
-            bookGenre="Fiction"
-            bookStatus="Reading Now"
-          />
-
-          <BookCard
-            bookTitle="Atmoic Habits"
-            bookAuthor="James Wang"
-            bookGenre="Fiction"
-            bookStatus="Reading Now"
-          />
+          <ChakraCarousel gap={32}>
+            <BookCard
+              bookTitle="Atmoic Habits"
+              bookAuthor="James Wang"
+              bookGenre="Fiction"
+              bookStatus="Reading Now"
+            />
+            <BookCard
+              bookTitle="Atmoic Habits"
+              bookAuthor="James Wang"
+              bookGenre="Fiction"
+              bookStatus="Reading Now"
+            />{' '}
+            <BookCard
+              bookTitle="Atmoic Habits"
+              bookAuthor="James Wang"
+              bookGenre="Fiction"
+              bookStatus="Reading Now"
+            />
+            <BookCard
+              bookTitle="Atmoic Habits"
+              bookAuthor="James Wang"
+              bookGenre="Fiction"
+              bookStatus="Reading Now"
+            />{' '}
+            <BookCard
+              bookTitle="Atmoic Habits"
+              bookAuthor="James Wang"
+              bookGenre="Fiction"
+              bookStatus="Reading Now"
+            />
+            <BookCard
+              bookTitle="Atmoic Habits"
+              bookAuthor="James Wang"
+              bookGenre="Fiction"
+              bookStatus="Reading Now"
+            />{' '}
+            <BookCard
+              bookTitle="Atmoic Habits"
+              bookAuthor="James Wang"
+              bookGenre="Fiction"
+              bookStatus="Reading Now"
+            />
+            <BookCard
+              bookTitle="Atmoic Habits"
+              bookAuthor="James Wang"
+              bookGenre="Fiction"
+              bookStatus="Reading Now"
+            />
+          </ChakraCarousel>
         </HStack>
       </VStack>
     </VStack>
