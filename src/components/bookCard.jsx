@@ -25,8 +25,15 @@ import {
   ModalHeader,
   Heading,
 } from '@chakra-ui/react'
-
+import { doc, deleteDoc } from 'firebase/firestore'
+import { db } from '../../firebase-config'
 export default function BookCard(props) {
+  async function deleteBook(e) {
+    console.log('DELTE', props.bookTitle, props.firestoreId)
+    await deleteDoc(doc(db, 'books', props.firestoreId))
+    
+  }
+
   const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <>
@@ -65,16 +72,21 @@ export default function BookCard(props) {
               <SliderThumb />
             </Slider>
 
-            <Select>
-              <option>Reading</option>
-              <option>Want to Read</option>
-              <option>Completed</option>
+            <Select placeholder="Select Status" isRequired>
+              <option value="reading">Reading</option>
+              <option value="want-to-read">Want to Read</option>
+              <option value="completed">Completed</option>
             </Select>
             <Checkbox>Add to Favourites</Checkbox>
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme="blue">Save</Button>
+            <Button onClick={() => updateBookData()} colorScheme="blue">
+              Save
+            </Button>
+            <Button colorScheme="red" onClick={(e) => deleteBook(e)}>
+              Delete
+            </Button>
           </ModalFooter>
         </ModalContent>
       </Modal>

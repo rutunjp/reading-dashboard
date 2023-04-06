@@ -16,6 +16,7 @@ export default function BooksDashboard() {
       bookAuthor={book.author}
       bookGenre={book.genre}
       bookStatus={book.status}
+      firestoreId={book.id}
       key={book.id}
     />
   ))
