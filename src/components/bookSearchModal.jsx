@@ -14,7 +14,7 @@ import SearchResultCard from './searchResultCard'
 
 export default function BookSearchModal() {
   const [results, setResults] = useState([])
-  console.log('RESULTS:', results)
+  // console.log('RESULTS:', results)
   const listItems = results.map((result) => (
     <SearchResultCard
       key={result.id}
@@ -27,7 +27,7 @@ export default function BookSearchModal() {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const axios = require('axios')
   async function requestBooks(title) {
-    console.log(title)
+    // console.log(title)
 
     axios
       .get(`https://www.googleapis.com/books/v1/volumes?q=${title}`)
