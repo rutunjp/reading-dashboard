@@ -14,7 +14,7 @@ import SearchResultCard from './searchResultCard'
 
 export default function BookSearchModal() {
   const [results, setResults] = useState([])
-  console.log('RESSSSSSILTS:', results)
+  console.log('RESULTS:', results)
   const listItems = results.map((result) => (
     <SearchResultCard
       key={result.id}

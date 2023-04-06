@@ -15,11 +15,12 @@ import { collection, addDoc } from 'firebase/firestore'
 import { db } from '../../firebase-config'
 
 export default function SearchResultCard(props) {
-  async function newBook(props) {
+  async function newBook(props, statusTag) {
     console.log('DOC PUSHED:', typeof props, props)
     const docRef = await addDoc(collection(db, 'books'), {
       ...props,
       notes: '',
+      statusTag: `${statusTag}`,
     })
   }
   return (

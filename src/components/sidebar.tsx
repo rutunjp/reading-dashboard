@@ -18,6 +18,7 @@ import {
 import { FiBook, FiFileText, FiMenu } from 'react-icons/fi'
 import { IconType } from 'react-icons'
 import { ReactText } from 'react'
+import BottomBubble from './bottomBubble'
 
 interface LinkItemProps {
   name: string
@@ -96,7 +97,7 @@ interface NavItemProps extends FlexProps {
 const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
   return (
     <Link
-      href="google.com"
+      href="articles"
       style={{ textDecoration: 'none' }}
       _focus={{ boxShadow: 'none' }}
     >
@@ -135,27 +136,29 @@ interface MobileProps extends FlexProps {
 }
 const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
   return (
-    <Flex
-      ml={{ base: 0, md: 60 }}
-      px={{ base: 4, md: 24 }}
-      height="20"
-      alignItems="center"
-      bg={useColorModeValue('white', 'gray.900')}
-      borderBottomWidth="1px"
-      borderBottomColor={useColorModeValue('gray.200', 'gray.700')}
-      justifyContent="flex-start"
-      {...rest}
-    >
-      <IconButton
-        variant="outline"
-        onClick={onOpen}
-        aria-label="open menu"
-        icon={<FiMenu />}
-      />
+    // <Flex
+    //   ml={{ base: 0, md: 60 }}
+    //   px={{ base: 4, md: 24 }}
+    //   height="20"
+    //   alignItems="center"
+    //   bg={useColorModeValue('white', 'gray.900')}
+    //   borderBottomWidth="1px"
+    //   borderBottomColor={useColorModeValue('gray.200', 'gray.700')}
+    //   justifyContent="flex-start"
+    //   {...rest}
+    // >
+    //   <IconButton
+    //     variant="outline"
+    //     onClick={onOpen}
+    //     aria-label="open menu"
+    //     icon={<FiMenu />}
+    //   />
 
-      <Text fontSize="2xl" ml="8" fontFamily="monospace" fontWeight="bold">
-        Logo
-      </Text>
-    </Flex>
+    //   <Text fontSize="2xl" ml="8" fontFamily="monospace" fontWeight="bold">
+    //     Logo
+    //   </Text>
+    // </Flex>
+
+    <BottomBubble />
   )
 }
